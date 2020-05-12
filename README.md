@@ -21,7 +21,7 @@ Step1: Choosing the right model. I have choosen to do ensembling the best 3 mode
 
 Step2 : Deployment. Having selected the right model, I have converted my phython file to JOBLIB format for deployment of AWS.
 
-Step3: Train the model with all the data available.
+Step3: In AWS, endpoint was created using auto generated AWS scripts.
 
 Step4: Set up Front end. My front end is written in jQuery and AJAX that calls the model.
 
