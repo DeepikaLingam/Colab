@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<!-- Required meta tags -->
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="img/Capture.PNG" type="image/png">
+	<title>Deepika Portfolio</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="vendors/linericon/style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+	<!-- main css -->
+	<link rel="stylesheet" href="css/style.css">
+	
+	 <script type="text/javascript">
+function calcHeight(iframeElement){
+    var the_height=  iframeElement.contentWindow.document.body.scrollHeight;
+    iframeElement.height=  the_height;
+}
+</script> 
+</head>
+
+<body class="blog_version">
+
+	<!--================ Start Header Area =================-->
+	<header class="header_area">
+		<div class="main_menu">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<a class="navbar-brand logo_h" href="index.php"><img src="img/new-logo.PNG" alt=""></a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+						<ul class="nav navbar-nav menu_nav justify-content-end">
+							<li class="nav-item active"><a class="nav-link" href="index.php">Home</a></li>
+							<li class="nav-item"><a class="nav-link" href="http://ldeepika.uta.cloud/MyPortfolio/index.php#about-us">About</a></li>
+							<li class="nav-item"><a class="nav-link" href="http://ldeepika.uta.cloud/MyPortfolio/index.php#experience">Experience</a></li>
+							<!--<li class="nav-item"><a class="nav-link" href="services.html">Technologies</a></li>-->
+							<li class="nav-item"><a class="nav-link" href="http://ldeepika.uta.cloud/MyPortfolio/index.php#tech">Technologies Known</a></li>
+							<li class="nav-item"><a class="nav-link" href="http://ldeepika.uta.cloud/MyPortfolio/index.php#portfolio">Projects</a></li>
+							<li class="nav-item submenu dropdown">
+							<a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="blog.html">
+							    Data Mining(5334)Blog</a>
+							    <ul class="dropdown-menu">
+                                    <li class="nav-item"><a class="nav-link" href="blog.html">Kaggle Practice</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="knn.html">KNN</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="naive.html">Naive Bayes</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="finalProject.html">BGG Reviews</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="predict.html">Predict Rating</a></li>
+								</ul>
+							 </li>
+							
+							<li class="nav-item"><a class="nav-link" href="http://ldeepika.uta.cloud/MyPortfolio/index.php#contact">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!--================ End Header Area =================-->
+
+    <!--================ Start Banner Area =================-->
+    <section class="banner_area">
+        <div class="banner_inner d-flex align-items-center">
+            <div class="container">
+                <div class="banner_content text-center">
+                    <h2>Predict Rating </h2>
+                    <p style="color:white;">Enter your review below to predict the rating</p>
+                    <div class="page_link">
+                       <strong>
+                        <a href="index.php">Home</a>
+                        </strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ End Banner Area =================-->
+        
+    <!--================Blog Categorie Area =================-->
+    <br/><br/>
+       <div class="banner_inner d-flex align-items-center" >
+            <div class="container">
+                <div class="banner_content text-center">
+                    <div class="jumbotron">
+                        <h2> Enter text below to see the rating</h2> 
+                    
+                    <div >
+        
+        <label>Review <input type="text" id="review"/></label>
+      <button class="primary_btn" onclick="myFunc()">Click Me</button>
+      </div>
+      <div id="output">Your rating:</div>
+      
+            <script>
+      function myFunc(){
+          
+          var review = document.getElementById("review").value;
+          document.getElementById("review").value=""
+          console.log(review)
+          var settings = {
+  "url": "https://cors-anywhere.herokuapp.com/https://ixpvotecm1.execute-api.us-east-2.amazonaws.com/first/deepi",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "data": JSON.stringify({"data":review}),
+};
+
+ 
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+   
+   var text = "For text: " + review + "<br/> Predicted Rating: " + response
+  document.getElementById("output").innerHTML = text;
+});
+    }
+      </script>
+    </div>   
+                </div>
+            </div>
+        </div>
+    
+    
+    <!--================Blog Area =================-->
+    
+   
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/stellar.js"></script>
+    <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+    <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+    <script src="vendors/isotope/isotope-min.js"></script>
+    <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+</html>
